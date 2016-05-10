@@ -1,6 +1,6 @@
 #! /bin/zsh
 
-volume -d 'pulse' -si 1 -f '%s %i' | while read -r line ; do
+volume -si 1 -f '%s %i' | while read -r line ; do
 	echo $line | { read mute vol }
 	if [[ $mute == "off" ]]
 	then

@@ -3,7 +3,7 @@
 xsetroot -cursor_name left_ptr &
 feh --bg-fill ~/wallpaper.jpg &
 pgrep -x compton > /dev/null || compton --respect-prop-shadow -bc -t -8 -l -9 -r 6 -o 0.7 &
-dropbox &
+#dropbox &
 
 bspc config border_width       1
 bspc config window_gap         6
@@ -21,7 +21,7 @@ bspc config normal_border_color '#282A2E'
 bspc config presel_feedback_color '#A54242'
 #bspc config active_border_color '#C5C8C6'
 
-bspc monitor -d 1 2 3 4 5 6 7 8
+bspc monitor -d 1 2 3 4 5 6
 
 bspc desktop 1 -l monocle
 
@@ -30,8 +30,8 @@ bspc rule -a Firefox desktop 1
 #bspc rule -a vivaldi-preview desktop 1
 bspc rule -a Vlc state=floating
 bspc rule -a Speedcrunch state=floating
-bspc rule -a Spotify desktop='^7'
-bspc rule -a telegram-desktop border=off state=floating locked=on desktop='^8'
+bspc rule -a Spotify desktop='^5'
+bspc rule -a telegram-desktop border=off state=floating locked=on desktop='^6'
 #bspc rule -a sun-awt-X11-XFramePeer state=floating
 
 ~/.config/bspwm/panel | sh &
