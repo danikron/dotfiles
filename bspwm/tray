@@ -11,11 +11,11 @@ do
 	fi
 	if [[ $TELEGRAM_MES ]]
 	then
-		TELEGRAM="%{A2:pkill Telegram:}\uf1d8%{A} $TELEGRAM_MES  "
+		TELEGRAM="%{A2:pkill telegram:}\uf1d8%{A} $TELEGRAM_MES  "
 		TELEGRAM_MES=""
 	elif [[ $TELEGRAM_RUN && !$TELEGRAM_MES ]]
 	then
-		TELEGRAM="%{A2:pkill Telegram:}\uf1d8%{A}  "
+		TELEGRAM="%{A2:pkill telegram:}\uf1d8%{A}  "
 	else
 		TELEGRAM=""
 	fi

@@ -21,7 +21,7 @@ bspc config normal_border_color '#282A2E'
 bspc config presel_feedback_color '#A54242'
 #bspc config active_border_color '#C5C8C6'
 
-bspc monitor -d 1 2 3 4 5 6 F1 F2
+bspc monitor -d 1 2 3 4 5 6 7 8
 
 bspc desktop 1 -l monocle
 
