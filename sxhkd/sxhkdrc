@@ -138,23 +138,23 @@ super + BackSpace
 	|| urxvt -name scratchpad -g 122x17-255-0 &
 	
 ctrl + alt + l
-	i3lock -n -u -c "#000000" -i '/home/danikron/.i3lock/arch_shred.png'
+	i3lock -n -u -c "#000000" -i ~/.i3lock/arch.png
 
 super + e
 	urxvt -e ranger
 
 XF86Sleep	
 	systemctl suspend; \
-	i3lock -n -u -c "#000000" -i '/home/danikron/.i3lock/arch_shred.png'
+	i3lock -n -u -c "#000000" -i ~/.i3lock/arch.png
 
 XF86AudioMute
 	pactl set-sink-mute 0 toggle
 
 XF86AudioRaiseVolume
-	sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +2%"
+	sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +1%"
 
 XF86AudioLowerVolume
-	sh -c "pactl set-sink-mute 0 false ; pactl -- set-sink-volume 0 -2%"
+	sh -c "pactl set-sink-mute 0 false ; pactl -- set-sink-volume 0 -1%"
 	
 XF86AudioPlay
 	cmus-remote -u; \
@@ -173,7 +173,7 @@ XF86AudioPrev
 	playerctl previous
 
 XF86MonBrightnessUp
-	xbacklight -inc 10
+	light -A 10	
 
 XF86MonBrightnessDown
-	xbacklight -dec 10
+	light -U 10

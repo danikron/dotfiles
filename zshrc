@@ -6,7 +6,7 @@ unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/danikron/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -U compinit
 compinit
@@ -51,7 +51,8 @@ export EDITOR=vim
 alias -g L="|less -FX"
 #alias syu="sudo aura -Syu && sudo aura -Aua"
 alias syu="pacaur -Syu && echo "U" > $PANEL_FIFO"
-alias rbgit="~/dotfiles/rbgit.sh"
+#alias rbgit="~/dotfiles/rbgit.sh"
+alias rbgit="pacaur -Syu --devel"
 alias rdpkg="pacman -Qtd"
 alias clnpkg="~/dotfiles/clnpkg.sh"
 alias x="chmod +x"
@@ -63,6 +64,7 @@ alias se="sudoedit"
 alias ..="cd .."
 alias ..2="cd ../.."
 alias rm="noglob rm"
+alias zathurat="tabbed -cd zathura -e"
 
 alias school="cd ~/Dropbox/School/KAU/"
 
