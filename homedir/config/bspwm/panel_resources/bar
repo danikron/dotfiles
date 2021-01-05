@@ -126,7 +126,7 @@ while read -r line ; do
 	for j in $(seq 2 ${num_mon}); do
 		tfgn=$(eval echo \$tfg${j})
 		tbgn=$(eval echo \$tbg${j})
-		output="${output}%{S+}%{l}${space}${border}%{+u}%{+o}${wm}%{c}${tfgn}${tbgn}${time}%{B-}%{F-}%{r}${update}${tray}${volume}${session}%{-o}%{-u}${border}${space}"
+		output="${output}%{S+}%{l}${space}${border}%{+u}%{+o}${wm}%{c}${tfgn}${tbgn}${time}%{B-}%{F-}%{r}${update}${tray}${battery}${volume}${session}%{-o}%{-u}${border}${space}"
 	done
 
 	printf "%s\n" "$output"
