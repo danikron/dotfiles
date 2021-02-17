@@ -1,6 +1,7 @@
 #! /bin/sh
 
 i3lock \
+	--color=1d1f21ff \
 	--insidecolor=1d1f21ff \
 	--ringcolor=c5c8c6ff \
 	--line-uses-inside \
@@ -25,4 +26,4 @@ i3lock \
 	--blur 5 \
 	--clock \
 	--indicator \
-	--screen 0
+	--screen=1
