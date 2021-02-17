@@ -1,5 +1,7 @@
 #! /bin/sh
 
+playerctl status &> /dev/null || exit 1
+
 artist=$(playerctl metadata artist)
 title=$(playerctl metadata title)
 
