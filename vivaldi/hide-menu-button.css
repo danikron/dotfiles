@@ -1,0 +1,4 @@
+button.vivaldi { display: none !important; }
+#browser #tabs-container.top{ padding-left: 0px }
+#browser.native:not(.tabs-top):not(.horizontal-menu) #header { display: none } 
+#titlebar > .vivaldi { display: none }
