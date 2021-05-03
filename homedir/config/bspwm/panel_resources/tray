@@ -12,7 +12,7 @@ while true ; do
 
 	if [[ $TELEGRAM_PID && ! $TELEGRAM_WID ]] ; then
 		WIDS=$(xdo id -p $TELEGRAM_PID)
-		TELEGRAM_WID=$(echo "$WIDS" | head -n $(xtitle $(echo $WIDS | tr "\n" " ") | grep -m 1 -n "Telegram" | cut -d: -f1) | tail -n 1)
+		TELEGRAM_WID=$(echo "$WIDS" | head -n $(xtitle $(echo "$WIDS" | tr "\n" " ") | grep -m 1 -n "Telegram" | cut -d: -f1) | tail -n 1)
 	elif [[ ! $TELEGRAM_PID ]] ; then
 		unset TELEGRAM_WID
 	fi
