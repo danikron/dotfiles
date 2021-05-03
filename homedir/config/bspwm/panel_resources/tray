@@ -11,8 +11,8 @@ while true ; do
 	TELEGRAM_PID=$(pgrep -f telegram-desktop)
 
 	if [[ $TELEGRAM_PID && ! $TELEGRAM_WID ]] ; then
-		WIDS=$(xdo id -p $TELEGRAM_PID | tr "\n" " ")
-		TELEGRAM_WID=$(echo "$WIDS" | head -n $(eval xtitle $WIDS | grep -m 1 -n "Telegram" | cut -d: -f1) | tail -n 1)
+		WIDS=$(xdo id -p $TELEGRAM_PID)
+		TELEGRAM_WID=$(echo "$WIDS" | head -n $(eval xtitle $(echo $WIDS | tr "\n" " ") | grep -m 1 -n "Telegram" | cut -d: -f1) | tail -n 1)
 	elif [[ ! $TELEGRAM_PID ]] ; then
 		unset TELEGRAM_WID
 	fi
