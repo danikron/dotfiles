@@ -8,12 +8,16 @@ while true ; do
 
 	##Telegram state
 
-	TELEGRAM_PID=$(pgrep -f telegram-desktop)
+	TELEGRAM_PIDS=$(pgrep -f telegram-desktop)
 
-	if [[ $TELEGRAM_PID && ! $TELEGRAM_WID ]] ; then
-		WIDS=$(xdo id -p $TELEGRAM_PID)
-		TELEGRAM_WID=$(echo "$WIDS" | head -n $(xtitle $WIDS | grep -m 1 -n "Telegram" | cut -d: -f1) | tail -n 1)
-	elif [[ ! $TELEGRAM_PID ]] ; then
+	if [[ $TELEGRAM_PIDS && ! $TELEGRAM_WID ]] ; then
+
+		for PID in $TELEGRAM_PIDS ; do
+			WIDS+="$(xdo id -p $PID) "
+		done
+
+		TELEGRAM_WID=$(echo "$WIDS" | eval head -n $(xtitle $(echo "$WIDS" | tr "\n" " ") | grep -m 1 -n "Telegram$\|Telegram (" | cut -d: -f1) | tail -n 1)
+	elif [[ ! $TELEGRAM_PIDS ]] ; then
 		unset TELEGRAM_WID
 	fi
 
