@@ -1,4 +1,5 @@
 ! Color variables
+
 #define fg_color #C5C8C6
 #define bg_color #1D1F21
 #define hl_fg_color #FFFFFF
@@ -35,6 +36,7 @@ panel.color.sys_bg: hl_bg_color
 panel.color.space: #00000000
 
 ! Cursor theme
+
 Xcursor.theme: oxy-grey
 
 ! Hybrid Terminal Colours. Uses the palette from Tomorrow-Night:
