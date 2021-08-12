@@ -66,6 +66,12 @@ redshift &
 ~/dotfiles/sysscripts/scratchpad.sh &
 ##Compositor
 pgrep -x picom > /dev/null || picom &
+##Touchpad gestures
+if [[ $(xinput list | grep -i "touchpad") ]] ; then
+
+	libinput-gestures-setup start &
+
+fi
 
 sxhkd &
 exec bspwm
