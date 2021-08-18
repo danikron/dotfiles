@@ -17,6 +17,7 @@ while true ; do
 		done
 
 		TELEGRAM_WID=$(echo "$WIDS" | eval head -n $(xtitle $(echo "$WIDS" | tr "\n" " ") | grep -m 1 -n "Telegram$\|Telegram (" | cut -d: -f1) | tail -n 1)
+		unset WIDS
 	elif [[ ! $TELEGRAM_PIDS ]] ; then
 		unset TELEGRAM_WID
 	fi
