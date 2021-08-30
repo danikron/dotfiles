@@ -11,7 +11,7 @@ super + {_,shift + }KP_Enter
 
 # program launcher
 super + r
-    rofi -monitor -1 -show run
+    rofi -monitor -1 -theme "Tomorrow-Dusk" -show run
 
 # make sxhkd reload its configuration files:
 super + Escape
