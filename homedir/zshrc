@@ -182,6 +182,7 @@ alias srm="noglob timeout 10 sudo rm -iv --one-file-system"
 alias -g cp="cp -iv"
 alias -g mv="mv -iv"
 alias locate="plocate"
+alias yeet="yay -Rcs"
 alias rcp="rsync -v --progress"
 alias rmv="rsync -v --progress --remove-source-files"
 alias sshcp="rsync -avHPe \"ssh -p$(cat ~/.ssh_port_private 2> /dev/null)\""
@@ -205,7 +206,7 @@ clpkg ()
 
 syu ()
 {
-	trizen -Syu --devel --needed "$@" --quiet
+	yay -Syu "$@"
 	(~/.config/bspwm/panel_resources/updates > "$PANEL_FIFO" &)
 	echo "$bold_color$fg[blue]::$fg[white] Checking for unaffiliated packages...${reset_color}"
 	clpkg

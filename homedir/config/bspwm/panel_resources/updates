@@ -1,9 +1,7 @@
 #! /bin/sh
 
 source ~/.config/bspwm/panel_resources/colors
-OFFICIAL_U=$(checkupdates | wc -l)
-AUR_U=$(trizen -Quaq --devel --needed | wc -l)
-((UPDATES = $OFFICIAL_U + $AUR_U))
+UPDATES=$(yay -Qu | wc -l)
 
 if [[ $UPDATES -gt 0 ]] ; then
 	UPDATES="\uf0aa"
