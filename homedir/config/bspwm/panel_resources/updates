@@ -1,7 +1,9 @@
 #! /bin/sh
 
 source ~/.config/bspwm/panel_resources/colors
-UPDATES=$(yay -Qu | wc -l)
+OFFICIAL_U=$(checkupdates | wc -l)
+AUR_U=$(yay -Quaq --devel | wc -l)
+((UPDATES = $OFFICIAL_U + $AUR_U))
 
 if [[ $UPDATES -gt 0 ]] ; then
 	UPDATES="\uf0aa"
