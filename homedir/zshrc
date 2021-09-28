@@ -175,7 +175,6 @@ alias ..="cd .."
 alias ..2="cd ../.."
 alias ln="ln -v"
 alias mkdir="mkdir -v"
-alias trash="trash -v"
 alias rm="noglob timeout 10 rm -iv --one-file-system"
 alias rmdir="rmdir -v"
 alias srm="noglob timeout 10 sudo rm -iv --one-file-system"
@@ -193,6 +192,23 @@ alias ga="git add"
 alias gc="git commit -m"
 
 alias Man="MANPAGER='nvim +Man!' man"
+
+trash ()
+{
+	for i in $*; do
+		targets+="\"$i\", "
+	done
+
+	read -q "REPLY?This will trash ${targets%??}. Continue? [y/N] "
+	echo #
+
+	unset targets
+
+	if [[ $REPLY =~ ^[Yy]$ ]]; then
+		/usr/local/bin/trash -v "$@"
+	fi
+}
+
 
 clpkg ()
 {
