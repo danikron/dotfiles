@@ -200,7 +200,7 @@ trash ()
 		targets+="\"$i\", "
 	done
 
-	read -q "REPLY?This will trash ${targets%??}. Continue? [y/N] "
+	read -q "REPLY?Are you sure you want to run trash with arguments ${targets%??}? [y/N] "
 	echo #
 
 	unset targets
