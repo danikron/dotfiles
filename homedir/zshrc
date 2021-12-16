@@ -181,6 +181,7 @@ alias srm="noglob timeout 10 sudo rm -iv --one-file-system"
 alias -g cp="cp -iv"
 alias -g mv="mv -iv"
 alias locate="plocate"
+alias trash="trash -iv"
 alias yank="yay -S"
 alias yeet="yay -Rcs"
 alias rcp="rsync -v --progress"
@@ -193,23 +194,6 @@ alias ga="git add"
 alias gc="git commit -m"
 
 alias Man="MANPAGER='nvim +Man!' man"
-
-trash ()
-{
-	for i in $*; do
-		targets+="\"$i\", "
-	done
-
-	read -q "REPLY?Are you sure you want to run trash with arguments ${targets%??}? [y/N] "
-	echo #
-
-	unset targets
-
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		/usr/local/bin/trash -v "$@"
-	fi
-}
-
 
 clpkg ()
 {
