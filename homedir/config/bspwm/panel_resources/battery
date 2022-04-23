@@ -1,7 +1,6 @@
 #! /bin/zsh
 
-IFS=:
-battery -f %s:%i | read CHAR BATT
+acpi | grep -o '[[:alnum:]]*' | cut -d $'\n' --output-delimiter ' ' -f 3,4 | read CHAR BATT
 
 case $BATT in
 	[8-9]?|100)
