@@ -14,7 +14,10 @@ bspc config top_padding $(( $PANEL_HEIGHT + $PANEL_TOP_GAP ))
 source ~/.config/bspwm/panel_resources/colors
 bspc subscribe report > "$PANEL_FIFO" &
 
-date +'T%A %d %B %H:%M' > "$PANEL_FIFO" &
+while true ; do
+	date +'T%A %d %B %H:%M' > "$PANEL_FIFO"
+	sleep 1
+done &
 source ~/.config/bspwm/panel_resources/tray
 
 while true ; do
