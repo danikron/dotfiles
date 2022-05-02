@@ -35,3 +35,20 @@ case $CLASS in
 		esac
 		;;
 esac
+
+case $CLASS in
+	"")
+		case $(exec ps -p "$(exec xdo pid "$WID")" -o comm= 2> /dev/null) in
+			"spotify")
+				case $(bspc query -M | wc -l) in
+					2)
+						echo "desktop = East:^2"
+						;;
+					*)
+						echo "desktop = ^2"
+						;;
+				esac
+				;;
+		esac
+		;;
+esac
