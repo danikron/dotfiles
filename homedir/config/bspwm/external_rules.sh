@@ -23,9 +23,7 @@ case $CLASS in
 				;;
 		esac
 		;;
-esac
 
-case $CLASS in
 	"Steam")
 		TITLE=$(xtitle "$WID")
 		case $TITLE in
@@ -34,9 +32,7 @@ case $CLASS in
 				;;
 		esac
 		;;
-esac
 
-case $CLASS in
 	"")
 		case $(exec ps -p "$(exec xdo pid "$WID")" -o comm= 2> /dev/null) in
 			"spotify")
