@@ -2,7 +2,7 @@
 
 #Check for battery
 
-[[ $(battery) ]] &> /dev/null && BATTEY_PRESENT=1
+[[ $(acpi) ]] &> /dev/null && BATTEY_PRESENT=1
 
 while true ; do
 
