@@ -52,3 +52,6 @@ bspc rule -a Zathura						state=tiled
 
 #Panel
 pgrep -f "bspwm/panel" || ~/.config/bspwm/panel &
+
+#Scratchpad
+~/dotfiles/sysscripts/scratchpad.sh &

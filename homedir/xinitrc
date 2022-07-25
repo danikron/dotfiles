@@ -61,11 +61,10 @@ urxvtd -q -f -o &
 unclutter --timeout 1 &
 dropbox &
 redshift &
-##Scripts
-~/dotfiles/sysscripts/vpncheck.sh &
-~/dotfiles/sysscripts/scratchpad.sh &
 ##Compositor
 pgrep -x picom > /dev/null || picom &
+##Scripts
+~/dotfiles/sysscripts/vpncheck.sh &
 ##Touchpad gestures
 if [[ $(xinput list | grep -i "touchpad") ]] ; then
 
