@@ -62,17 +62,17 @@ tab.tabbrowser-tab[selected="true"] {
   -moz-margin-end: -16px !important;
 }
 
-/*Hide new tab button*/
-#new-tab-button,.tabs-newtab-button {
-  visibility: collapse !important;
-}
-
 #TabsToolbar #tabbrowser-tabs .tabbrowser-tab[pinned] .tab-close-button {
   visibility: hidden !important;
   display: block !important;
   opacity: 0 !important;
   -moz-margin-start: -18px !important;
 }
+
+/*Hide new tab button*/
+/*#new-tab-button,.tabs-newtab-button {
+  visibility: collapse !important;
+}*/
 
 /*Hide overflow shadows*/
 #TabsToolbar .arrowscrollbox-overflow-start-indicator, #TabsToolbar .arrowscrollbox-overflow-end-indicator {
