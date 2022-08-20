@@ -1,7 +1,7 @@
 * {
     font: "Source Sans Pro Semibold 10";
     foreground: #C5C8C6;
-    background-color: #1D1F21;
+    background: #1D1F21;
 	active-foreground: #FFFFFF;
     active-background: #584181;
 	urgent-foreground: @active-foreground;
@@ -10,24 +10,25 @@
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
-    separatorcolor: @active-background;
-    bordercolor: @foreground;
+    separator: @active-background;
+    border: @foreground;
 }
 
 #window {
     background-color: @background;
     border:           1;
     padding:          4;
-	border-color:     @bordercolor;
+	border-color:     @border;
 	width:            40%;
 }
 #mainbox {
+    background-color: @background;
     border:  0;
     padding: 0;
 }
 #message {
     border:       1px dash 0px 0px ;
-    border-color: @separatorcolor;
+    border-color: @separator;
     padding:      1px ;
 }
 #textbox {
@@ -35,8 +36,9 @@
 }
 #listview {
     fixed-height: 0;
+    background-color: @background;
     border:       0px 0px 0px ;
-    border-color: @bordercolor;
+    border-color: @border;
     spacing:      2px ;
     scrollbar:    false;
     padding:      0px 0px 0px ;
@@ -94,7 +96,7 @@ element-text {
 }
 #sidebar {
     border:       2px dash 0px 0px ;
-    border-color: @separatorcolor;
+    border-color: @separator;
 }
 #button.selected {
     background-color: @selected-background;
@@ -102,19 +104,23 @@ element-text {
 }
 #inputbar {
     spacing:    0;
+	background-color: @background;
     text-color: @foreground;
     padding:    1px ;
 }
 #case-indicator {
     spacing:    0;
+    background-color: @background;
     text-color: @foreground;
 }
 #entry {
     spacing:    0;
+	background-color: @background;
     text-color: @foreground;
 }
 #prompt {
     spacing:    0;
+	background-color: @background;
     text-color: @foreground;
 }
 #inputbar {
@@ -124,5 +130,6 @@ element-text {
     expand:     false;
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
+	background-color: @background;
     text-color: @foreground;
 }
