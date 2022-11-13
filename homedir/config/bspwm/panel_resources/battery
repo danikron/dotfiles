@@ -35,10 +35,10 @@ fi
 
 echo "B$LEVEL$BOLT"
 
-if [[ $BATTERY -le 9 && ! $CHARER = "on-line" ]] ; then
+if [[ $BATTERY -le 9 && ! $CHARGER = "on-line" ]] ; then
 	export BATTERY
 	~/dotfiles/sysscripts/battwarn.sh &
-elif [[ $BATTERY -le 9 && $CHARER = "on-line" ]] ; then
+elif [[ $BATTERY -le 9 && $CHARGER = "on-line" ]] ; then
 	echo "150" > /tmp/battwarn
 else
 	echo "0" > /tmp/battwarn
