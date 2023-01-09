@@ -1,14 +1,14 @@
 #! /bin/sh
 
-VPN_IF=azirevpn-se1
-VPN_CHECK="curl -sS https://api.azirevpn.com/v1/check --max-time 2"
-VPN_CHECK_FILTER="grep '\"connected\": true'"
+VPN_IF=PWG
+VPN_CHECK="curl -sS https://ipinfo.io/org --max-time 2"
+VPN_CHECK_FILTER="grep 'Datacamp'"
 POLL_INTERVAL=15
 poll_delay_tick=0
 
 while true; do
 
-	vpn_up=$(ip r | grep ${VPN_IF})
+	vpn_up=$(ip link | grep ${VPN_IF})
 
 	if [[ $vpn_up && $poll_delay_tick == 0 ]]; then
 		vpn_check_result=$(eval ${VPN_CHECK} 2> /tmp/vpn_err)
