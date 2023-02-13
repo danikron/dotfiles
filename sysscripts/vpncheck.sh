@@ -1,8 +1,8 @@
 #! /bin/sh
 
 VPN_IF=PWG
-VPN_CHECK="curl -sS https://ipinfo.io/org --max-time 2"
-VPN_CHECK_FILTER="grep 'Datacamp'"
+VPN_CHECK="curl -sS https://ipleak.net/json/ --max-time 2 | jq -r '.isp_name'"
+VPN_CHECK_FILTER="grep 'Datacamp Limited'"
 POLL_INTERVAL=15
 poll_delay_tick=0
 
@@ -12,7 +12,7 @@ while true; do
 
 	if [[ $vpn_up && $poll_delay_tick == 0 ]]; then
 		vpn_check_result=$(eval ${VPN_CHECK} 2> /tmp/vpn_err)
-		vpn_connected=$(echo "${vpn_check_result}" | eval ${VPN_CHECK_FILTER})
+		vpn_connected=$(printf '%s' "${vpn_check_result}" | eval ${VPN_CHECK_FILTER})
 		#echo "Check ran"
 	fi
 
