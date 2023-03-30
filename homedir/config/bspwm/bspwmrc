@@ -33,7 +33,7 @@ case $(bspc query -M | wc -l) in
 		feh --bg-fill ~/wallpaper1.jpg --bg-fill ~/wallpaper2.jpg &
 		bspc rule -a qBittorrent			desktop='East:^5'
 		bspc rule -a TelegramDesktop		desktop='East:^6'
-		bspc rule -a Signal					desktop='East:^6' state=pseudo_tiled locked=on
+		bspc rule -a Signal					desktop='East:^6'
 		;;
 	*)
 		bspc monitor Primary -a 7 8
@@ -41,7 +41,7 @@ case $(bspc query -M | wc -l) in
 		bspc rule -a Waterfox				desktop='^1'
 		bspc rule -a qBittorrent			desktop='^7'
 		bspc rule -a TelegramDesktop		desktop='^8'
-		bspc rule -a Signal					desktop='^8' state=pseudo_tiled locked=on
+		bspc rule -a Signal					desktop='^8'
 		;;
 esac
 
