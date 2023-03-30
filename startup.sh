@@ -2,10 +2,10 @@
 
 case $(hostname) in
 	"amunet")
-		APPS=("waterfox" "telegram-desktop" "qbittorrent" "spotify")
+		APPS=("waterfox" "signal-desktop" "qbittorrent" "spotify")
 		;;
 	"hathor")
-		APPS=("waterfox" "telegram-desktop" "spotify")
+		APPS=("waterfox" "signal-desktop" "spotify")
 		;;
 esac
 

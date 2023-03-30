@@ -33,20 +33,20 @@ case $(bspc query -M | wc -l) in
 		feh --bg-fill ~/wallpaper1.jpg --bg-fill ~/wallpaper2.jpg &
 		bspc rule -a qBittorrent			desktop='East:^5'
 		bspc rule -a TelegramDesktop		desktop='East:^6'
+		bspc rule -a Signal					desktop='East:^6' state=pseudo_tiled locked=on
 		;;
 	*)
 		bspc monitor Primary -a 7 8
 		feh --bg-fill ~/wallpaper.jpg &
 		bspc rule -a Waterfox				desktop='^1'
-		bspc rule -a SVPManager				desktop='^6' state=pseudo_tiled
 		bspc rule -a qBittorrent			desktop='^7'
 		bspc rule -a TelegramDesktop		desktop='^8'
+		bspc rule -a Signal					desktop='^8' state=pseudo_tiled locked=on
 		;;
 esac
 
 bspc rule -a mpv							state=floating
 bspc rule -a SpeedCrunch					state=floating
-bspc rule -a SVPManager						desktop='Primary:^6 'state=pseudo_tiled
 bspc rule -a URxvt:scratchpad				state=floating sticky=on locked=on hidden=on
 bspc rule -a Zathura						state=tiled
 
