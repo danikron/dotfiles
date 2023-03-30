@@ -5,7 +5,7 @@ case $(hostname) in
 		APPS=("waterfox" "signal-desktop" "qbittorrent" "spotify")
 		;;
 	"hathor")
-		APPS=("waterfox" "signal-desktop" "spotify")
+		APPS=("waterfox-g4" "signal-desktop" "spotify")
 		;;
 esac
 
