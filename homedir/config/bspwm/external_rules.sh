@@ -24,6 +24,18 @@ case $CLASS in
 		esac
 		;;
 
+	"Signal")
+		TITLE=$(xtitle "$WID")
+		case $TITLE in
+			"Signal Desktop Preferences")
+				echo "state = floating"
+				;;
+			*)
+				echo "state = pseudo_tiled"
+				echo "locked = on"
+				;;
+		esac
+		;;
 	"Steam")
 		TITLE=$(xtitle "$WID")
 		case $TITLE in

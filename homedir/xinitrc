@@ -61,7 +61,7 @@ urxvtd -q -f -o &
 unclutter --timeout 1 &
 dropbox &
 redshift &
-copyq
+copyq &
 ##Compositor
 pgrep -x picom > /dev/null || picom &
 ##Scripts
