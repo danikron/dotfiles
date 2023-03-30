@@ -6,28 +6,28 @@
 
 while true ; do
 
-	##Telegram state
+	##Signal state
 
-	TELEGRAM_PIDS=$(pgrep -f telegram-desktop)
+	SIGNAL_PIDS=$(pgrep -f signal-desktop)
 
-	if [[ $TELEGRAM_PIDS && ! $TELEGRAM_WID ]] ; then
+	if [[ $SIGNAL_PIDS && ! $SIGNAL_WID ]] ; then
 
-		for PID in $TELEGRAM_PIDS ; do
+		for PID in $SIGNAL_PIDS ; do
 			WIDS+="$(xdo id -p $PID) "
 		done
 
-		TELEGRAM_WID=$(echo "$WIDS" | eval head -n $(xtitle $(echo "$WIDS" | tr "\n" " ") | grep -m 1 -n "Telegram$\|Telegram (" | cut -d: -f1) | tail -n 1)
+		SIGNAL_WID=$(echo "$WIDS" | eval head -n $(xtitle $(echo "$WIDS" | tr "\n" " ") | grep -m 1 -n "Signal$\|Signal (" | cut -d: -f1) | tail -n 1)
 		unset WIDS
-	elif [[ ! $TELEGRAM_PIDS ]] ; then
-		unset TELEGRAM_WID
+	elif [[ ! $SIGNAL_PIDS ]] ; then
+		unset SIGNAL_WID
 	fi
 
-	if [[ $TELEGRAM_WID && $(xtitle $TELEGRAM_WID | tr -dc '0-9') ]] ; then
-		TELEGRAM=" %{T3}\uf1d8%{T-} "
-	elif [[ $TELEGRAM_WID ]] ; then
-		TELEGRAM=" %{T3}\uf1d9%{T-} "
+	if [[ $SIGNAL_WID && $(xtitle $SIGNAL_WID | tr -dc '0-9') ]] ; then
+		SIGNAL=" %{T3}\uf1d8%{T-} "
+	elif [[ $SIGNAL_WID ]] ; then
+		SIGNAL=" %{T3}\uf1d9%{T-} "
 	else
-		TELEGRAM=" %{F#FF707880}%{T3}\uf1d9%{T-}%{F-} "
+		SIGNAL=" %{F#FF707880}%{T3}\uf1d9%{T-}%{F-} "
 	fi
 
 	##Dropbox state
@@ -116,7 +116,7 @@ while true ; do
 
 	VOLUME=$(~/.config/bspwm/panel_resources/volume)
 
-	echo -e "R $TELEGRAM$DROPBOX$REDSHIFT$VPN$NET"
+	echo -e "R $SIGNAL$DROPBOX$REDSHIFT$VPN$NET"
 	echo -e "$BATTERY"
 	echo -e "$VOLUME"
 
