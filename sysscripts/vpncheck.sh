@@ -2,7 +2,7 @@
 
 VPN_IF=PWG
 VPN_CHECK="curl -sS https://ipleak.net/json/ --max-time 2 | jq -r '.isp_name'"
-VPN_CHECK_FILTER="grep 'Datacamp Limited'"
+VPN_CHECK_FILTER="grep 'Datacamp Limited\|Bahnhof AB'"
 POLL_INTERVAL=15
 poll_delay_tick=0
 
