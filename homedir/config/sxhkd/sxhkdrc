@@ -195,16 +195,16 @@ XF86AudioLowerVolume
 	~/.config/bspwm/panel_resources/volume > "$PANEL_FIFO"
 
 XF86AudioPlay
-	playerctl -p spotify,cmus play-pause
+	playerctl -p spotify,cmus,tidal-hifi play-pause
 
 XF86AudioStop
-	playerctl -p spotify,cmus stop
+	playerctl -p spotify,cmus,tidal-hifi stop
 
 XF86AudioNext
-	playerctl -p spotify,cmus next
+	playerctl -p spotify,cmus,tidal-hifi next
 
 XF86AudioPrev
-	playerctl -p spotify,cmus previous
+	playerctl -p spotify,cmus,tidal-hifi previous
 
 XF86MonBrightnessUp
 	light -A 10
