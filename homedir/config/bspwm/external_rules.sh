@@ -5,10 +5,10 @@ CLASS=$2
 INSTANCE=$3
 
 #Debug
-TITLE=$(xtitle "$WID")
-PID=$(xdo pid "$WID")
-PTITLE=$(ps -p "$PID" -o comm=)
-echo "$PID $PTITLE $WID $CLASS $INSTANCE $TITLE" > /tmp/bspc-external-rules
+#TITLE=$(xtitle "$WID")
+#PID=$(xdo pid "$WID")
+#PTITLE=$(ps -p "$PID" -o comm=)
+#echo "$PID $PTITLE $WID $CLASS $INSTANCE $TITLE" > /tmp/bspc-external-rules
 
 #Telegram
 
