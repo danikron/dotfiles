@@ -46,25 +46,4 @@ case $CLASS in
 				;;
 		esac
 		;;
-
-	"Spotify")
-		case $(bspc query -M | wc -l) in
-			2)
-				echo "desktop = East:^2"
-				;;
-			*)
-				echo "desktop = ^2"
-				;;
-		esac
-		;;
-	"tidal-hifi")
-		case $(bspc query -M | wc -l) in
-			2)
-				echo "desktop = East:^2"
-				;;
-			*)
-				echo "desktop = ^2"
-				;;
-		esac
-		;;
 esac
