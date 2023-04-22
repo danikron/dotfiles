@@ -6,7 +6,9 @@ INSTANCE=$3
 
 #Debug
 #TITLE=$(xtitle "$WID")
-#echo "$WID $CLASS $INSTANCE $TITLE" > /tmp/bspc-external-rules
+#PID=$(xdo pid "$WID")
+#PTITLE=$(ps -p "$PID" -o comm=)
+#echo "$PID $PTITLE $WID $CLASS $INSTANCE $TITLE" > /tmp/bspc-external-rules
 
 #Telegram
 
@@ -41,21 +43,6 @@ case $CLASS in
 		case $TITLE in
 			"Friends List")
 				echo "state = floating"
-				;;
-		esac
-		;;
-
-	"")
-		case $(exec ps -p "$(exec xdo pid "$WID")" -o comm= 2> /dev/null) in
-			"spotify")
-				case $(bspc query -M | wc -l) in
-					2)
-						echo "desktop = East:^2"
-						;;
-					*)
-						echo "desktop = ^2"
-						;;
-				esac
 				;;
 		esac
 		;;
