@@ -19,6 +19,7 @@ browser {
 #nav-bar-customization-target, #nav-bar-overflow-button, #PanelUI-button {
 	background: var(--main-ac-color) !important;
 	color: var(--hl-tx-color);
+	margin-inline-start: 0px !important;
 }
 
 /*Button hover appearance*/
@@ -32,26 +33,29 @@ browser {
 /*TABBAR*/
 
 /* Hide blue stripe on active tab */
-.tab-line {
+.tab-context-line {
   opacity: 0 !important;
 }
 
 /*Tab colors*/
 #TabsToolbar, #tabbrowser-tabs {
 	background: var(--main-bg-color) !important;
-  color: var(--main-tx-color) !important;
+	color: var(--main-tx-color) !important;
 }
 
 .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"]) {
   background: var(--main-hl-color) !important;
 }
 
-.tab-background[selected="true"] {
-  background: var(--main-ac-color) !important;
+.tab[selected="true"] .tab-background {
+  background-color: var(--main-ac-color) !important;
+  background-image: none !important;
 }
 
-tab.tabbrowser-tab[selected="true"] {
+.tab-content[selected="true"] {
   color: var(--hl-tx-color) !important;
+  background-color: var(--main-ac-color) !important;
+  background-image: none !important;
 }
 
 /*Hide close buttons*/

@@ -38,7 +38,7 @@ case $CLASS in
 				;;
 		esac
 		;;
-	"Steam")
+	[Ss]team)
 		TITLE=$(xtitle "$WID")
 		case $TITLE in
 			"Friends List")
