@@ -18,9 +18,9 @@
 #widget_class "*Pager*"             style "pager"
 #class "*Pager*"                    style "pager"
 
-gtk-theme-name = "oomox-Tomorrow-Dusk"
+gtk-theme-name = "oomox-Tomorrow-Dusk-v2"
 gtk-font-name = "Source Sans Pro 10"
-gtk-icon-theme-name = "oomox-Tomorrow-Dusk"
+gtk-icon-theme-name = "oomox-Tomorrow-Dusk-v2"
 gtk-cursor-theme-name = "oxy-grey"
 gtk-cursor-theme-size = 16
 gtk-button-images = 0

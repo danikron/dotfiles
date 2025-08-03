@@ -294,8 +294,8 @@ key[PageUp]=${terminfo[kpp]}
 key[PageDown]=${terminfo[knp]}
 
 #setup key accordingly
-[[ -n "${key[Home]}"     ]]  && bindkey  "${key[Home]}"     beginning-of-line
-[[ -n "${key[End]}"      ]]  && bindkey  "${key[End]}"      end-of-line
+[[ -n "${key[Home]}"     ]]  && bindkey  "\e[H"			    beginning-of-line
+[[ -n "${key[End]}"      ]]  && bindkey  "\e[F"      		end-of-line
 [[ -n "${key[Insert]}"   ]]  && bindkey  "${key[Insert]}"   overwrite-mode
 [[ -n "${key[Delete]}"   ]]  && bindkey  "${key[Delete]}"   delete-char
 [[ -n "${key[Up]}"       ]]  && bindkey  "${key[Up]}"       up-line-or-history

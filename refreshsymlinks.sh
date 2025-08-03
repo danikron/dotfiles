@@ -96,6 +96,8 @@ for file in $FILES; do
 	ln -vs $SOURCEDIR/homedir/$file ~/.$file >> $LOGFILE 2>&1
 done
 
+ln -vs $SOURCEDIR/host/config/hypr/conf/$HOSTNAME.conf $HOME/.config/hypr/conf/custom.conf >> $LOGFILE 2>&1
+
 echo "done"
 
 echo -e "\nLog written to $LOGFILE"
