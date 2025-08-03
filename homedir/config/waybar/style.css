@@ -1,8 +1,8 @@
 * {
     border: none;
     border-radius: inherit;
-    font-family: "Source Sans Variable", "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-family: "Inter Variable", "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
     min-height: 0;
 }
 
@@ -111,7 +111,7 @@ tooltip label {
 
 #memory {
 	border-radius: 5px 5px 5px 5px;
-	min-width: 46px;
+	min-width: 56px;
 }
 
 #temperature {
