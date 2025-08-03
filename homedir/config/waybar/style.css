@@ -95,8 +95,8 @@ tooltip label {
 #pulseaudio, #network {
 	background: #584181;
 	color: #FFFFFF;
-	padding: 0 5px 0 0;
-	min-width: 54px;
+	padding: 0 0 0 0;
+	min-width: 56px;
 }
 
 #cpu, #memory, #temperature, #custom-gpu-monitor {
@@ -116,7 +116,6 @@ tooltip label {
 
 #temperature {
 	border-radius: 5px 5px 5px 5px;
-	min-width: 56px;
 }
 
 #custom-gpu-monitor {
