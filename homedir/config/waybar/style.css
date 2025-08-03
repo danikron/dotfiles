@@ -31,10 +31,17 @@ tooltip label {
   color: white;
 }
 
-#workspaces button {
+#workspaces button.empty {
     padding: 0 2px 0 0;
     background: transparent;
     color: #C5C8C6;
+    border: 1px solid transparent;
+}
+
+#workspaces button {
+    padding: 0 2px 0 0;
+    background: #C5C8C6;
+    color: #1D1F21;
     border: 1px solid transparent;
 }
 
@@ -96,7 +103,7 @@ tooltip label {
 	background: #584181;
 	color: #FFFFFF;
 	padding: 0 0 0 0;
-	min-width: 56px;
+	min-width: 60px;
 }
 
 #cpu, #memory, #temperature, #custom-gpu-monitor {
@@ -106,12 +113,12 @@ tooltip label {
 
 #cpu {
 	border-radius: 5px 5px 5px 5px;
-	min-width: 56px;
+	min-width: 60px;
 }
 
 #memory {
 	border-radius: 5px 5px 5px 5px;
-	min-width: 56px;
+	min-width: 60px;
 }
 
 #temperature {
@@ -119,5 +126,5 @@ tooltip label {
 }
 
 #custom-gpu-monitor {
-	min-width: 146px
+	min-width: 156px
 }
