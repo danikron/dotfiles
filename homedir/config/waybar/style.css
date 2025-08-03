@@ -1,0 +1,123 @@
+* {
+    border: none;
+    border-radius: inherit;
+    font-family: "Source Sans Variable", "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    border-bottom: 0px solid rgba(100, 114, 125, 0.5);
+    color: #C5C8C6;
+	min-height: 38px;
+}
+
+window > box {
+	margin: 6px;
+    background: #1D1F21;
+	min-height: 26px;
+    color: #C5C8C6;
+	border-radius: 3px;
+}
+
+tooltip {
+  background: #1D1F21;
+  color: #C5C8C6;
+  border: 1px solid #C5C8C6;
+}
+tooltip label {
+  color: white;
+}
+
+#workspaces button {
+    padding: 0 2px 0 0;
+    background: transparent;
+    color: #C5C8C6;
+    border: 1px solid transparent;
+}
+
+#workspaces button:hover {
+	border: 1px solid #584181;
+	background-color: #3A3051;
+	box-shadow: none;
+}
+
+#workspaces button.active {
+    background: #584181;
+	color: #FFFFFF;
+    border: 1px solid transparent;
+}
+ 
+#mode, #clock {
+    padding: 0 10px 0 10px;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#clock {
+    background-color: #584181;
+	color: #FFFFFF;
+}
+
+#battery {
+    background-color: #C5C8C6;
+    color: #1D1F21;
+	min-width: 56px;
+}
+
+#battery.charging {
+    color: white;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#pulseaudio, #network {
+	background: #584181;
+	color: #FFFFFF;
+	padding: 0 5px 0 0;
+	min-width: 54px;
+}
+
+#cpu, #memory, #temperature, #custom-gpu-monitor {
+	background: #584181;
+	color: #FFFFFF;
+}
+
+#cpu {
+	border-radius: 5px 5px 5px 5px;
+	min-width: 56px;
+}
+
+#memory {
+	border-radius: 5px 5px 5px 5px;
+	min-width: 46px;
+}
+
+#temperature {
+	border-radius: 5px 5px 5px 5px;
+	min-width: 56px;
+}
+
+#custom-gpu-monitor {
+	min-width: 146px
+}
