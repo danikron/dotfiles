@@ -19,13 +19,13 @@
 #class "*Pager*"                    style "pager"
 
 gtk-theme-name = "oomox-Tomorrow-Dusk-v2"
-gtk-font-name = "Source Sans Pro 10"
+gtk-font-name = "Inter Variable 10"
 gtk-icon-theme-name = "oomox-Tomorrow-Dusk-v2"
 gtk-cursor-theme-name = "oxy-grey"
 gtk-cursor-theme-size = 16
 gtk-button-images = 0
 
 style "vimfix" {
-  bg[NORMAL] = "#1D1F21" # this matches my gvim theme 'Normal' bg color.
+  bg[NORMAL] = "#161819" # this matches my gvim theme 'Normal' bg color.
 }
 widget "vim-main-window.*GtkForm" style "vimfix"

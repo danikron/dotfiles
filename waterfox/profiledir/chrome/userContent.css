@@ -1,5 +1,0 @@
-@import "./colors.css";
-
-@-moz-document url-prefix(about:blank) {*{background-color:var(--main-bg-color);}}
-
-*::selection {background-color:var(--main-ac-color) !important; color:var(--hl-tx-color);}

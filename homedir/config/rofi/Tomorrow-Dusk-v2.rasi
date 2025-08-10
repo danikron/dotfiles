@@ -1,0 +1,106 @@
+* {
+    font:   "Inter Medium 10";
+
+    bg0:    #161819FF;
+    bg1:    #7E7E7E80;
+    bg2:    #584181;
+
+    fg0:    #C5C8C6;
+    fg1:    #FFFFFF;
+    fg2:    #DEDEDE80;
+
+    background-color:   transparent;
+    text-color:         @fg0;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
+}
+
+window {
+    background-color:   @bg0;
+		border-radius: 5;
+		padding: 1;
+		background-image: linear-gradient(45deg, #33ccff, #00ff99);
+    location:       center;
+    width:          35%;
+}
+
+#mainbox {
+    background-color: @bg0;
+		border-radius: 5;
+    border:  0;
+		border-radius:		5;
+    padding: 5;
+}
+inputbar {
+    font:       "Inter Medium 14";
+    padding:    5px;
+    spacing:    5px;
+    children:   [ icon-search, entry ];
+}
+
+icon-search {
+    expand:     false;
+    filename:   "search";
+    size: 28px;
+}
+
+icon-search, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+entry {
+    font:   inherit;
+
+    placeholder         : "Search";
+    placeholder-color   : @fg2;
+}
+
+message {
+    border:             2px 0 0;
+    border-color:       @bg1;
+    background-color:   @bg1;
+}
+
+textbox {
+    padding:    8px 24px;
+}
+
+listview {
+    lines:      10;
+    columns:    1;
+		padding: 5 0 0 0;
+
+    fixed-height:   true;
+    border:         1px 0 0;
+    border-color:   @bg1;
+}
+
+element {
+    padding:            8px 16px;
+    spacing:            16px;
+    background-color:   transparent;
+}
+
+element normal active {
+    text-color: @bg2;
+}
+
+element alternate active {
+    text-color: @bg2;
+}
+
+element selected normal, element selected active {
+    background-color:   @bg2;
+		border-radius: 5px;
+    text-color:         @fg1;
+}
+
+element-icon {
+    size:   1em;
+}
+
+element-text {
+    text-color: inherit;
+}

@@ -146,7 +146,7 @@ bindkey -v
 export KEYTIMEOUT=1
 
 bindkey '^?' backward-delete-char
-bindkey '^h' backward-delete-char
+bindkey '^H' backward-delete-word
 bindkey '^P' up-history
 bindkey '^N' down-history
 

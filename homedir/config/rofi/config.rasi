@@ -6,7 +6,7 @@ configuration {
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
 /*	show-icons: false;*/
-	terminal: "urxvt";
+	terminal: "kitty";
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
 /*	run-command: "{cmd}";*/
@@ -145,4 +145,4 @@ configuration {
   }
 }
 
-@theme "Tomorrow-Dusk"
+@theme "Tomorrow-Dusk-v2"

@@ -16,14 +16,14 @@ window#waybar {
 window > box {
 	margin: 6px;
 	padding: 2px;
-    background: #1D1F21;
+    background: #161819;
 	min-height: 24px;
     color: #C5C8C6;
 	border-radius: 5px;
 }
 
 tooltip {
-  background: #1D1F21;
+  background: #161819;
   color: #C5C8C6;
   border: 1px solid #C5C8C6;
 }
@@ -40,8 +40,8 @@ tooltip label {
 
 #workspaces button {
     padding: 0 2px 0 0;
-    background: #C5C8C6;
-    color: #1D1F21;
+    background: #B3B6B4;
+    color: #161819;
     border: 1px solid transparent;
 }
 
@@ -57,7 +57,7 @@ tooltip label {
 	color: #FFFFFF;
     border: 1px solid transparent;
 }
- 
+
 #mode, #clock {
     padding: 0 10px 0 10px;
 }
@@ -73,13 +73,13 @@ tooltip label {
 }
 
 #battery {
-    background-color: #C5C8C6;
-    color: #1D1F21;
+    background-color: #B3B6B4;;
+    color: #161819;
 	min-width: 56px;
 }
 
 #battery.charging {
-    color: white;
+    color: #C5C8C6;
     background-color: #26A65B;
 }
 
@@ -92,7 +92,7 @@ tooltip label {
 
 #battery.warning:not(.charging) {
     background: #f53c3c;
-    color: white;
+    color: #FFFFFF;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
