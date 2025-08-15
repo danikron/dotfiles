@@ -1,4 +1,6 @@
 #! /bin/sh
 
-WORKSPACEID=$(hyprctl activeworkspace -j | jq '.id')
-LARGESTWINDOW=$(hyprctl clients -j | jq -c '.[] | select(.workspace.id | contains(2))'  | jq -s 'sort_by(.size) | last' | jq '.address')
+WORKSPACE_ID=$(hyprctl activeworkspace -j | jq '.id')
+LARGEST_WINDOW=$(hyprctl clients -j | jq -c ".[] | select(.workspace.id | contains(${WORKSPACE_ID}))" | jq -sr 'sort_by(.size) | last | .address')
+
+hyprctl dispatch swapwindow address:${LARGEST_WINDOW}

@@ -1,115 +1,148 @@
 * {
-    border: none;
-    border-radius: inherit;
-    font-family: "Inter Variable", "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    min-height: 0;
+	border: none;
+	border-radius: inherit;
+	font-family: "Inter Variable", "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	min-height: 0;
 }
 
 window#waybar {
-    background: transparent;
-    border-bottom: 0px solid rgba(100, 114, 125, 0.5);
-    color: #C5C8C6;
+	background: transparent;
+	border-bottom: 0px solid rgba(100, 114, 125, 0.5);
+	color: #C5C8C6;
 	min-height: 38px;
 }
 
-window > box {
+window>box {
 	margin: 6px;
 	padding: 2px;
-    background: #161819;
+	background: #161819;
 	min-height: 24px;
-    color: #C5C8C6;
+	color: #C5C8C6;
 	border-radius: 5px;
 }
 
 tooltip {
-  background: #161819;
-  color: #C5C8C6;
-  border: 1px solid #C5C8C6;
+	background: #161819;
+	color: #C5C8C6;
+	border: 1px solid #C5C8C6;
 }
+
 tooltip label {
-  color: white;
+	color: white;
+}
+
+#window {
+	padding-left: 4px;
+}
+
+#workspaces {
+	background: #584181;
+	padding-left: 1px;
+	padding-right: 1px;
 }
 
 #workspaces button.empty {
-    padding: 0 2px 0 0;
-    background: transparent;
-    color: #C5C8C6;
-    border: 1px solid transparent;
+	padding: 0 2px 0 0;
+	background: #161819;
+	color: #C5C8C6;
+	border: 1px solid #584181;
 }
 
 #workspaces button {
-    padding: 0 2px 0 0;
-    background: #B3B6B4;
-    color: #161819;
-    border: 1px solid transparent;
+	padding: 0 2px 0 0;
+	background: #584181;
+	color: #FFFFFF;
+	border: 1px solid #584181;
 }
 
 #workspaces button:hover {
 	border: 1px solid #584181;
 	background-color: #3A3051;
-    color: #C5C8C6;
+	color: #C5C8C6;
 	box-shadow: none;
 }
 
 #workspaces button.active {
-    background: #584181;
-	color: #FFFFFF;
-    border: 1px solid transparent;
+	background: #B3B6B4;
+	color: #161819;
+	border: 1px solid #584181;
 }
 
-#mode, #clock {
-    padding: 0 10px 0 10px;
+#mode,
+#clock {
+	padding: 0 10px 0 10px;
 }
 
 #mode {
-    background: #64727D;
-    border-bottom: 3px solid white;
+	background: #64727D;
+	border-bottom: 3px solid white;
 }
 
 #clock {
-    background-color: #584181;
+	background-color: #584181;
 	color: #FFFFFF;
 }
 
 #battery {
-    background-color: #B3B6B4;;
-    color: #161819;
+	background-color: #B3B6B4;
+	;
+	color: #161819;
 	min-width: 56px;
 }
 
 #battery.charging {
-    color: #C5C8C6;
-    background-color: #26A65B;
+	color: #C5C8C6;
+	background-color: #26A65B;
 }
 
 @keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
+	to {
+		background-color: #ffffff;
+		color: black;
+	}
 }
 
 #battery.warning:not(.charging) {
-    background: #f53c3c;
-    color: #FFFFFF;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+	background: #f53c3c;
+	color: #FFFFFF;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
-#pulseaudio, #network {
+#network {
 	background: #584181;
 	color: #FFFFFF;
-	padding: 0 0 0 0;
-	min-width: 60px;
+	padding: 0 2 0 2;
 }
 
-#cpu, #memory, #temperature, #custom-gpu-monitor {
+#pulseaudio {
+	background: #161819;
+	color: #FFFFFF;
+}
+
+#cpu,
+#memory,
+#temperature,
+#custom-gpu-monitor {
 	background: #584181;
 	color: #FFFFFF;
+}
+
+#tray {
+	padding-right: 2px;
+}
+
+#custom-signal {
+	padding-right: 2px;
+}
+
+#custom-separator {
+	padding-left: 4px;
+	padding-right: 4px;
 }
 
 #cpu {
@@ -127,5 +160,23 @@ tooltip label {
 }
 
 #custom-gpu-monitor {
-	min-width: 156px
+	min-width: 156px;
+}
+
+#gpu-monitor {
+	padding: 0 0 0 8;
+	background: #584181;
+	min-width: 156px;
+}
+
+#custom-gpu-utilization {
+	min-width: 52px;
+}
+
+#custom-mem-utilization {
+	min-width: 52px;
+}
+
+#custom-gpu-temperature {
+	min-width: 52px;
 }

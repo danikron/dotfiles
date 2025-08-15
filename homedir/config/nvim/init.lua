@@ -7,6 +7,7 @@ vim.opt.cursorline = true
 vim.opt.wrap = false
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 8
+vim.opt.title = true
 
 -- Indent
 vim.opt.tabstop = 2
@@ -19,13 +20,13 @@ vim.opt.autoindent = true
 -- Search settings
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 -- Visual settings
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
-vim.opt.colorcolumn = "100"
+-- vim.opt.colorcolumn = "100"
 vim.opt.showmatch = true
 vim.opt.matchtime = 2
 vim.opt.cmdheight = 1
@@ -56,10 +57,10 @@ vim.opt.iskeyword:append("-")
 vim.opt.path:append("**")
 vim.opt.selection = "exclusive"
 vim.opt.mouse = "a"
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldlevel = 99
---vim.opt.foldlevelstart = 2
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 6
 vim.diagnostic.config({
 	virtual_text = true
 })
@@ -86,6 +87,10 @@ vim.g.maplocalleader = " "
 -- Execution mappings
 vim.keymap.set("n", "<space>x", "<cmd>.lua<CR>")
 vim.keymap.set("v", "<space>x", "<cmd>lua<CR>")
+
+-- Map more accessible escape
+vim.keymap.set("i", "jj", "<ESC>", { silent = true })
+vim.keymap.set("i", "jk", "<ESC>", { silent = true })
 
 -- Map Ctrl-S to save and F2 to update
 vim.keymap.set("n", "<c-s>", "<cmd>w<CR>", {})
@@ -135,6 +140,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)" })
 vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" })
 
 -- Buffer navigation
+vim.keymap.set("n", "<leader>bo", ":vnew<CR>", { desc = "Open new buffer" })
 vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
 
@@ -166,7 +172,16 @@ vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position" })
 
 -- Quick config editing
-vim.keymap.set("n", "<leader>rc", ":e ~/.config/nvim/init.lua<CR>", { desc = "Edit config" })
+vim.keymap.set("n", "<leader>ec", ":e ~/.config/nvim/init.lua<CR>", { desc = "Edit config" })
+
+-- Jump to diagnostic
+vim.keymap.set("n", "<leader>dj", function() vim.diagnostic.jump({ count = 1, floar = true }) end,
+	{ desc = "[d]iagnostic goto_next [j]" })
+vim.keymap.set("n", "<leader>dk", function() vim.diagnostic.jump({ count = -1, floar = true }) end,
+	{ desc = "[d]iagnostic goto_next [k]" })
+
+-- Hide search highlight on escape
+vim.keymap.set("n", "<esc>", ":noh<CR><esc>", { silent = true })
 
 -- Plugin mappings
 vim.keymap.set("n", "-", "<cmd>Oil<CR>")
@@ -199,6 +214,18 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 		local lcount = vim.api.nvim_buf_line_count(0)
 		if mark[1] > 0 and mark[1] <= lcount then
 			pcall(vim.api.nvim_win_set_cursor, 0, mark)
+		end
+	end,
+})
+
+-- Select foldmethod based on parser
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	callback = function()
+		if require("nvim-treesitter.parsers").has_parser() then
+			vim.opt.foldmethod = "expr"
+			vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+		else
+			vim.opt.foldmethod = "syntax"
 		end
 	end,
 })

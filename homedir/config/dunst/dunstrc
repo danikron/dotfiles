@@ -25,11 +25,11 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 300
+    width = 400
 
     # The height of a single notification, excluding the frame.
     # dynamic height from 0 to 300
-    height = (0, 300)
+    height = 150
     # constant height of 300
     # height = 300
     # NOTE: Dunst from version 1.11 and older don't support dynamic height
@@ -76,7 +76,7 @@
     progress_bar_corners = all
 
     # Corner radius for the icon image.
-    icon_corner_radius = 0
+    icon_corner_radius = 5
 
     # Define which corners to round when drawing the icon image. If icon_corner_radius
     # is set to 0 this option will be ignored.
@@ -111,7 +111,7 @@
     frame_width = 1
 
     # Defines color of the frame around the notification window.
-    frame_color = "#00ff99"
+    frame_color = "#C5C8C6"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border

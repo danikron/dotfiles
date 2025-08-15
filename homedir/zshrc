@@ -145,6 +145,8 @@ export EDITOR=nvim
 bindkey -v
 export KEYTIMEOUT=1
 
+bindkey -r "^["
+bindkey "^[[27;2;27~" vi-cmd-mode
 bindkey '^?' backward-delete-char
 bindkey '^H' backward-delete-word
 bindkey '^P' up-history
@@ -166,7 +168,7 @@ alias sx="sudo chmod +x"
 alias cat="bat"
 alias ls="exa -s type"
 alias ll="exa -l -s type"
-alias fsz="dust -ir"
+alias fzf="fzf --height=40% --preview 'bat -n --color=always {}'"
 alias grep="grep --color=auto"
 alias btm="btm -g"
 alias e="$EDITOR"
@@ -181,13 +183,13 @@ alias srm="noglob timeout 10 sudo rm -iv --one-file-system"
 alias -g cp="cp -iv"
 alias -g mv="mv -iv"
 alias locate="plocate"
-alias trash="trash -iv"
 alias yank="yay -S"
 alias yeet="yay -Rcs"
 alias rcp="rsync -v --progress"
 alias rmv="rsync -v --progress --remove-source-files"
 alias sshcp="rsync -avHPe \"ssh -p$(cat ~/.ssh_port_private 2> /dev/null)\""
 alias restartpw="systemctl --user restart pipewire.service pipewire-pulse.socket"
+alias icat="kitten icat"
 
 alias gs="git status -sb"
 alias ga="git add"
