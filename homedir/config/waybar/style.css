@@ -159,14 +159,14 @@ tooltip label {
 	border-radius: 5px 5px 5px 5px;
 }
 
-#custom-gpu-monitor {
-	min-width: 156px;
-}
+/* #custom-gpu-monitor { */
+/* 	min-width: 156px; */
+/* } */
 
 #gpu-monitor {
 	padding: 0 0 0 8;
 	background: #584181;
-	min-width: 156px;
+	/* min-width: 156px; */
 }
 
 #custom-gpu-utilization {

@@ -10,24 +10,23 @@ if [ $NVIDIA_SMI_PRESENT = 'TRUE' ]; then
 	MEM=${GPU_STAT_ARRAY[1]}
 	TEMP=${GPU_STAT_ARRAY[2]}
 
-#	printf '%s%%   %s%%   %s°C \n' "${GPU_STAT_ARRAY[0]}" "${GPU_STAT_ARRAY[1]}" "${GPU_STAT_ARRAY[2]}"
+	#	printf '%s%%   %s%%   %s°C \n' "${GPU_STAT_ARRAY[0]}" "${GPU_STAT_ARRAY[1]}" "${GPU_STAT_ARRAY[2]}"
+	while getopts ":gmt" opt; do
+		case $opt in
+			g)
+				printf '  %s%%\n' "${GPU}"
+				exit
+				;;
+			m)
+				printf '  %s%%\n' "${MEM}"
+				exit
+				;;
+			t)
+				printf ' %s°C\n' "${TEMP}"
+				exit
+				;;
+		esac
+	done
+
+	printf '  %s%%    %s%%    %s°C\n' "${GPU}" "${MEM}" "${TEMP}"
 fi
-
-while getopts ":gmt" opt; do
-	case $opt in
-		g)
-			printf '  %s%%\n' "${GPU}"
-			exit
-			;;
-		m)
-			printf '  %s%%\n' "${MEM}"
-			exit
-			;;
-		t)
-			printf ' %s°C\n' "${TEMP}"
-			exit
-			;;
-	esac
-done
-
-printf '  %s%%    %s%%    %s°C\n' "${GPU}" "${MEM}" "${TEMP}"
