@@ -87,7 +87,7 @@ tooltip label {
 
 #battery {
 	background-color: #B3B6B4;
-	;
+	padding: 0 2 0 2;
 	color: #161819;
 	min-width: 56px;
 }
