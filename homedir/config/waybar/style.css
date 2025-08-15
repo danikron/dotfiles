@@ -123,6 +123,7 @@ tooltip label {
 #pulseaudio {
 	background: #161819;
 	color: #FFFFFF;
+	padding-right: 2px;
 	padding-left: 2px;
 }
 
@@ -136,6 +137,7 @@ tooltip label {
 
 #tray {
 	padding-right: 2px;
+	padding-left: 2px;
 }
 
 #custom-signal {
