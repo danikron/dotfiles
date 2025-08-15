@@ -38,7 +38,8 @@
 			"separate-outputs": true,
 			"rewrite": {
         "(.*) — Zen Browser": "$1",
-        "(.*) - Nvim": "$1"
+        "(.*) - Nvim": "$1",
+        "(.*) - mpv": "$1"
     	}
 		},
 		//"hyprland/workspaces": {
