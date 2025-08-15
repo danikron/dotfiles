@@ -164,7 +164,7 @@ tooltip label {
 /* } */
 
 #gpu-monitor {
-	padding: 0 0 0 8;
+	padding: 0 8 0 8;
 	background: #584181;
 	/* min-width: 156px; */
 }
