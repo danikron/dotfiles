@@ -54,6 +54,7 @@ tooltip label {
 	background: #584181;
 	color: #FFFFFF;
 	border: 1px solid #584181;
+	min-width: 32px;
 }
 
 #workspaces button:hover {
@@ -122,6 +123,7 @@ tooltip label {
 #pulseaudio {
 	background: #161819;
 	color: #FFFFFF;
+	padding-left: 2px;
 }
 
 #cpu,
