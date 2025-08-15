@@ -1,6 +1,6 @@
 #! /bin/bash
 
-case "$(printf "Monitor\nKill process\nSleep\nReboot\nShutdown" | rofi -theme-str 'entry {placeholder: "System calls";}' -dmenu -i -c -l 4)" in
+case "$(printf "Monitor\nKill process\nSleep\nReboot\nShutdown" | rofi -theme-str 'entry {placeholder: "System calls";}' -dmenu -i -c -l 5)" in
 	'Monitor') kitty 'btop' ;;
 	'Kill process') ps -u $USER -o comm,%cpu,%mem,pid --sort -pcpu | rofi -theme-str 'entry {placeholder: "Search processes";}' -dmenu -i -c -l 10 -p Kill: | awk '{print $1}' | xargs -r kill ;;
 	Sleep) slock systemctl suspend -i ;;
