@@ -210,18 +210,18 @@
 			},
 			"on-click": "pwvucontrol",
 		},
-		"custom/media": {
-			"format": "{icon} {text}",
-			"return-type": "json",
-			"max-length": 40,
-			"format-icons": {
-				"spotify": "",
-				"default": "🎜"
-			},
-			"escape": true,
-			"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-																																 // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-		},
+		// "custom/media": {
+		// 	"format": "{icon} {text}",
+		// 	"return-type": "json",
+		// 	"max-length": 40,
+		// 	"format-icons": {
+		// 		"spotify": "",
+		// 		"default": "🎜"
+		// 	},
+		// 	"escape": true,
+		// 	"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+		// 																														 // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+		// },
 		"custom/power": {
 			"format" : "⏻ ",
 			"tooltip": false,
@@ -244,6 +244,7 @@
 			"justify": "left",
 			"align": 0,
 			"format": "{}",
+			"tooltip": false,
 			"return-type": "",
 			"exec": "/home/danikron/dotfiles/sysscripts/gpumon.sh -g",
 			"interval": 4,
@@ -252,6 +253,7 @@
 			"justify": "center",
 			"align": 0,
 			"format": "{}",
+			"tooltip": false,
 			"return-type": "",
 			"exec": "/home/danikron/dotfiles/sysscripts/gpumon.sh -m",
 			"interval": 4,
@@ -260,6 +262,7 @@
 			"justify": "right",
 			"align": 0,
 			"format": "{}",
+			"tooltip": false,
 			"return-type": "",
 			"exec": "/home/danikron/dotfiles/sysscripts/gpumon.sh -t",
 			"interval": 4,
