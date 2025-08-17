@@ -85,7 +85,7 @@
 		},
 		"mpd": {
 			//"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-			"format": " {stateIcon} {artist} - {album} - {title}",
+			"format": " {stateIcon}  {artist} - {album} - {title}",
 			//"format-disconnected": "Disconnected ",
 			"format-disconnected": "",
 			//"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
