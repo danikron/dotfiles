@@ -14,11 +14,11 @@ if [ $NVIDIA_SMI_PRESENT = 'TRUE' ]; then
 	while getopts ":gmt" opt; do
 		case $opt in
 			g)
-				printf '  %s%%\n' "${GPU}"
+				printf '   %s%%\n' "${GPU}"
 				exit
 				;;
 			m)
-				printf '  %s%%\n' "${MEM}"
+				printf '   %s%%\n' "${MEM}"
 				exit
 				;;
 			t)
