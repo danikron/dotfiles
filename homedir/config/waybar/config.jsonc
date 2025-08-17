@@ -135,11 +135,11 @@
 			"format": "{:%A %d %B %H:%M}"
 		},
 		"cpu": {
-			"format": "  {usage}%",
+			"format": "   {usage}%",
 			"tooltip": false
 		},
 		"memory": {
-			"format":  "  {}%"
+			"format":  "   {}%"
 		},
 		"temperature": {
 			// "thermal-zone": 2,
@@ -207,7 +207,7 @@
 				"phone": "",
 				"portable": "",
 				"car": "",
-				"default": ["", "", " "]
+				"default": ["", "", "  "]
 			},
 			"on-click": "pwvucontrol",
 		},
