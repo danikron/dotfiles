@@ -144,6 +144,7 @@ alias rcp="rsync -v --progress"
 alias rmv="rsync -v --progress --remove-source-files"
 alias sshcp="rsync -avHPe \"ssh -p$(cat ~/.ssh_port_private 2> /dev/null)\""
 alias restartpw="systemctl --user restart pipewire.service pipewire-pulse.socket"
+alias cls="clear"
 alias icat="kitten icat"
 alias lg="lazygit"
 
