@@ -20,7 +20,7 @@ return {
 			require('telescope').load_extension('fzf')
 			vim.keymap.set("n", "<leader>fd", require('telescope.builtin').find_files, { desc = 'Telescope find files' })
 			vim.keymap.set("n", "<leader>fh", require('telescope.builtin').help_tags, { desc = 'Telescope help tags' })
-			vim.keymap.set("n", "<leader>fg", require('telescope.builtin').live_grep, { desc = 'Telescope live grep' })
+			vim.keymap.set("n", "<leader>lg", require('telescope.builtin').live_grep, { desc = 'Telescope live grep' })
 			vim.keymap.set("n", "<leader>en", function()
 				require('telescope.builtin').find_files {
 					cwd = vim.fn.stdpath("config")

@@ -186,6 +186,9 @@ vim.keymap.set("n", "<esc>", ":noh<CR><esc>", { silent = true })
 -- Plugin mappings
 vim.keymap.set("n", "-", "<cmd>Oil<CR>")
 
+-- ALIASES
+vim.api.nvim_create_user_command('Lg', 'LazyGit', {})
+
 -- FUNCTIONS
 
 -- Copy Full File-Path
