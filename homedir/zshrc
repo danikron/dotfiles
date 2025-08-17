@@ -13,6 +13,31 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Enable Oh-My-Posh
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle :compinstall filename ~/.zshrc
+autoload -U compinit && compinit
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'
+	--style=full"
+export FZF_CTRL_R_OPTS="
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'
+	--style=full"
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'tree -C {}'
+	--style=full"
+
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color=always $realpath'
+
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
@@ -43,94 +68,6 @@ setopt=hist_ignore_dups
 setopt=hist_find_no_dups
 unsetopt beep
 
-# Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-
-#The following lines were added by compinstall
-zstyle :compinstall filename ~/.zshrc
-
-autoload -U compinit
-compinit
-#End of lines added by compinstall
-
-#This allows setting menuselect hotkeys
-# zmodload zsh/complist
-
-#This alters the appearance of autocompletion
-# zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
-# zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
-
-#This sets the option to ignore duplicate history lines
-# setopt HIST_IGNORE_DUPS
-
-#Persistant rehash for auto-completion
-# setopt nohashdirs
-# setopt nohashcmds
-
-# This sets the case insensitivity
-# zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
-
-#This disables autocomplete of unavailable commands
-# zstyle ':completion:*:functions' ignored-patterns '_*'
-
-#This shows a list of completion options
-# zstyle ':completion:*' menu select
-
-# This sets the dynamic window title
-# termtitle () {
-# 	case $TERM in
-# 		xterm*|*rxvt*)
-# 			print -Pn "\e]0;%n@%m: %~\a"
-# 			;;
-# 	esac
-# }
-
-# #This sets up the git branch prompt
-# setup_git_prompt () {
-# 	if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-# 		unset git_prompt
-# 		return 0
-# 	fi
-#
-# 	local git_status_dirty git_branch
-#
-# 	if [ "$(git --no-optional-locks status --untracked-files='no' --porcelain)" ]; then
-# 		git_status_dirty='%F{green}*'
-# 	else
-# 		unset git_status_dirty
-# 	fi
-#
-# 	git_branch="$(git symbolic-ref HEAD 2>/dev/null)"
-# 	git_branch="${git_branch#refs/heads/}"
-#
-# 	if [ "${#git_branch}" -ge 24 ]; then
-# 		git_branch="${git_branch:0:21}..."
-# 	fi
-#
-# 	git_branch="${git_branch:-no branch}"
-#
-# 	git_prompt=" %F{red}[%f${git_branch}${git_status_dirty}%F{red}]%f"
-#
-# }
-#
-# precmd () {
-# 	termtitle
-# 	setup_git_prompt
-# }
-#
-# #This selects the prompt style and sets an exit status indicator
-# setopt promptsubst
-# #autoload -U promptinit
-# #promptinit
-# #prompt redhat
-# if [ $SSH_CONNECTION ]; then SSH="%n@%m "; else SSH=""; fi
-# PROMPT=%1(j.[%j].)'['$SSH%~']'%(!.#.$)' '
-# RPROMPT='${git_prompt}%(?..(%?%))'
-
 #This enables the help command
 autoload -U run-help
 autoload run-help-git
@@ -138,19 +75,6 @@ autoload run-help-svn
 autoload run-help-svk
 unalias run-help &>/dev/null
 alias help=run-help
-
-# Finally, make sure the terminal is in application mode, when zle is
-# active. Only then are the values from $terminfo valid.
-# if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
-# 	function zle-line-init () {
-# 		printf '%s' "${terminfo[smkx]}"
-# 	}
-# 	function zle-line-finish () {
-# 		printf '%s' "${terminfo[rmkx]}"
-# 	}
-# 	zle -N zle-line-init
-# 	zle -N zle-line-finish
-# fi
 
 #This prevents SIGSTOP at Ctrl-S
 #stty -ixon
@@ -163,7 +87,7 @@ autoload -Uz zmv
 autoload -U colors && colors
 
 #This sets autocd
-#setopt autocd
+setopt autocd
 
 #This sets cd to never select parent directory
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
@@ -173,12 +97,6 @@ zstyle ':completion:*' squeeze-slashes true
 
 #This activates auto-correction
 setopt correct
-
-#This loads a syntax highlighting plugin
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-#This hides gtk3 app messages about not being able to register with accessibility bus
-# export NO_AT_BRIDGE=1
 
 #This sets autocomplete for aliases
 # setopt no_complete_aliases
@@ -197,15 +115,6 @@ bindkey '^H' backward-delete-word
 bindkey '^P' history-search-backward
 bindkey '^N' history-search-forward
 bindkey '^y' autosuggest-accept
-
-# #Set mode indication in prompt
-# function zle-line-init zle-keymap-select {
-#     VIM_PROMPT="[% NORMAL]% "
-# 	RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}${git_prompt}%(?..(%?%)) $EPS1"
-#     zle reset-prompt
-# }
-# zle -N zle-line-init
-# zle -N zle-keymap-select
 
 #Aliases
 alias -g L="|less -FX"
@@ -300,15 +209,6 @@ escape() {
     printf '%q\n' "$escape_string_input"
 }
 
-#Prevent nested ranger instances
-# ranger() {
-# 	if [ -z "$RANGER_LEVEL" ]; then
-# 		/usr/bin/ranger "$@"
-# 	else
-# 		exit
-# 	fi
-# }
-
 #Online services
 cs() { curl cheat.sh/$1; }
 
@@ -339,11 +239,4 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   history-search-backward
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" history-search-forward
 
-# bindkey -M menuselect '^[[Z' reverse-menu-complete
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_CTRL_T_OPTS="
-  --walker-skip .git,node_modules,target
-  --preview 'bat -n --color=always {}'
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 eval "$(zoxide init --cmd cd zsh)"
