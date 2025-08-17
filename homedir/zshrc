@@ -80,7 +80,7 @@ compinit
 #This shows a list of completion options
 # zstyle ':completion:*' menu select
 
-#This sets the dynamic window title
+# This sets the dynamic window title
 # termtitle () {
 # 	case $TERM in
 # 		xterm*|*rxvt*)
