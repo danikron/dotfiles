@@ -13,4 +13,4 @@ fi
 
 hyprctl dispatch focuswindow address:${SCRATCHPAD_ID} | grep -G '^ok$' && exit 0
 
-kitty --class="Scratchpad" --title="Scratchpad" -o window_padding_width='5 5 15 5' &
+kitty --class="Scratchpad" --title="Scratchpad" -o window_padding_width='4 6 15 6' &
