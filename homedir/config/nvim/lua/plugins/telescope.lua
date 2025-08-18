@@ -26,7 +26,7 @@ return {
 				require('telescope.builtin').find_files {
 					cwd = vim.fn.stdpath("config")
 				}
-			end)
+			end, { desc = 'Telescope config dir' })
 			vim.keymap.set("n", "<leader>ep", function()
 				require('telescope.builtin').find_files {
 					cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
