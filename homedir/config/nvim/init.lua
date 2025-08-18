@@ -112,6 +112,7 @@ vim.keymap.set("n", "ÄÄ", "}}", {})
 
 -- Map pasting to external registers
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>Y", '"+y$', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>p", '"+p', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>P", '"+P', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>0", '0+p', { noremap = true, silent = true })
@@ -140,7 +141,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)" })
 vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" })
 
 -- Buffer navigation
-vim.keymap.set("n", "<leader>bo", ":vnew<CR>", { desc = "Open new buffer" })
 vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
 
