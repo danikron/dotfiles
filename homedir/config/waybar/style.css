@@ -175,13 +175,13 @@ tooltip label {
 }
 
 #custom-gpu-utilization {
-	min-width: 52px;
+	min-width: 56px;
 }
 
 #custom-mem-utilization {
-	min-width: 52px;
+	min-width: 56px;
 }
 
 #custom-gpu-temperature {
-	min-width: 52px;
+	min-width: 56px;
 }
